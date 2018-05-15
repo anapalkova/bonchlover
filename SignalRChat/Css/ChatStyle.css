@@ -1,0 +1,178 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+#header {
+  padding: 20px;
+  background-color: #f09728;
+  border-bottom: #a86308 solid 2px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.sut_logo {
+  width: 200px;
+}
+
+.submitButton {
+  background-color: #f09728;
+  border: 1px solid #a86308;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #fff;
+}
+
+.login {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 2px solid #a86308;
+  color: #000;
+}
+
+.login .textBox {
+  width: 240px;
+}
+
+.login #divButton {
+  padding: 4px;
+  text-align: right;
+}
+
+.chatRoom {
+  width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid gray;
+}
+
+.chatRoom .title {
+  font-size: 16px;
+  padding: 8px;
+  background-color: #f09728;
+  border-bottom: 1px solid #a86308;
+}
+
+.chatRoom .content {
+  height: 300px;
+  clear: both;
+}
+
+.chatRoom .content .chatWindow {
+  float: left;
+  width: 409px;
+  height: 300px;
+  border-right: 1px solid #a86308;
+  overflow-y: scroll;
+}
+
+.chatRoom .content .chatWindow .message {
+  padding: 4px;
+}
+
+.chatRoom .content .chatWindow .message .userName {
+  font-weight: bold;
+}
+
+.chatRoom .content .users {
+  float: right;
+  width: 240px;
+  height: 300px;
+}
+
+.chatRoom .content .users .user {
+  display: block;
+  cursor: pointer;
+  padding: 4px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #a86308;
+}
+
+.chatRoom .content .users .loginUser {
+  display: block;
+  padding: 4px;
+  color: gray;
+  border-bottom: solid 1px #a86308;
+}
+
+.chatRoom .content .users .user:hover {
+  background-color: #e1e1e1;
+}
+
+.chatRoom .messageBar {
+  border-top: 1px solid gray;
+  padding: 4px;
+}
+
+.chatRoom .messageBar .textbox {
+  width: 550px;
+}
+
+.disconnect {
+  position: absolute;
+  margin: 10px;
+  background-color: #ffcbcb;
+  padding: 4px;
+  border: 1px solid red;
+}
+
+.draggable {
+  position: absolute;
+  border: #a86308 solid 1px !important;
+  width: 272px;
+}
+
+.draggable .header {
+  cursor: move;
+  background-color: #f09728;
+  border-bottom: 1px solid #a86308;
+  color: #000;
+}
+
+.draggable .selText {
+  color: black;
+  padding: 4px;
+}
+
+.draggable .messageArea {
+  width: 272px;
+  overflow-y: scroll;
+  height: 200px;
+  border-bottom: 1px solid #a86308;
+}
+
+.draggable .messageArea .message {
+  padding: 4px;
+}
+
+.draggable .buttonBar {
+  width: 272px;
+  padding: 4px;
+}
+
+.draggable .buttonBar .msgText {
+  width: 172px;
+}
+
+.draggable .buttonBar .button {
+  margin-left: 4px;
+  width: 76px;
+}
+
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+}
