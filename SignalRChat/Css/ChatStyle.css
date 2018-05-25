@@ -4,6 +4,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   padding: 0px;
   margin: 0px;
+  position: relative;
+  min-height: 700px;
+}
+
+.wrap {
+  height: 100vh;
 }
 
 #header {
@@ -13,6 +19,18 @@ body {
   color: #fff;
   font-size: 30px;
   text-align: center;
+}
+
+#footer {
+  background-color: #f09728;
+  border-top: #a86308 solid 2px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  z-index: -1;
 }
 
 .logo {
@@ -34,13 +52,22 @@ body {
   background-color: #fff;
 }
 
+.expand {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: black;
+}
+
 .login {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
   border: 2px solid #a86308;
+  border-radius: 10px;
   color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .login .textBox {
@@ -52,14 +79,39 @@ body {
   text-align: right;
 }
 
+.stateMe {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: springgreen;
+}
+
+.stateOther {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: springgreen;
+}
+
 .chatRoom {
-  width: 650px;
+  /* max-width: 650px; */
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .chatRoom .title {
+  cursor: move;
   font-size: 16px;
   padding: 8px;
   background-color: #f09728;
@@ -88,6 +140,7 @@ body {
 }
 
 .chatRoom .content .users {
+  background: white;
   float: right;
   width: 240px;
   height: 300px;
@@ -102,6 +155,7 @@ body {
 }
 
 .chatRoom .content .users .loginUser {
+  background: white;
   display: block;
   padding: 4px;
   color: gray;
@@ -112,7 +166,14 @@ body {
   background-color: #e1e1e1;
 }
 
+.chatWindow {
+  background: white;
+  display: none;
+}
+
 .chatRoom .messageBar {
+  background: white;
+  display: none;
   border-top: 1px solid gray;
   padding: 4px;
 }
@@ -126,13 +187,22 @@ body {
   margin: 10px;
   background-color: #ffcbcb;
   padding: 4px;
-  border: 1px solid red;
+  border: 1px solid rgba(255, 0, 0, 0.7);
+}
+
+.connect {
+  position: absolute;
+  margin: 10px;
+  background-color: #a8ffd4;
+  padding: 4px;
+  border: 1px solid rgba(0, 255, 0, 0.7);
 }
 
 .draggable {
   position: absolute;
   border: #a86308 solid 1px !important;
   width: 272px;
+  z-index: 999;
 }
 
 .draggable .header {

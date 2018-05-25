@@ -9,15 +9,14 @@ namespace SignalRChat
 {
     public class ChatHub : Hub
     {
-        #region Data Members
+        // Данные о пользователях
 
         static List<UserDetail> ConnectedUsers = new List<UserDetail>();
         static List<MessageDetail> CurrentMessage = new List<MessageDetail>();
 
-        #endregion
+        // Методы
 
-        #region Methods
-
+        // Подключение нового пользователя
         public void Connect(string userName)
         {
             var id = Context.ConnectionId;
@@ -27,10 +26,10 @@ namespace SignalRChat
             {
                 ConnectedUsers.Add(new UserDetail { ConnectionId = id, UserName = userName });
 
-                // send to caller
+                // Посылаем сообщение текущему пользователю send to caller
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
-                // send to all except caller client
+                // Посылаем сообщение всем пользователям, кроме текущего send to all except caller client
                 Clients.AllExcept(id).onNewUserConnected(id, userName);
 
             }
@@ -39,7 +38,7 @@ namespace SignalRChat
 
         public void SendMessageToAll(string userName, string message)
         {
-            // store last 100 messages in cache
+            // Запись сообщений в кэш store last 100 messages in cache
             AddMessageinCache(userName, message);
 
             // Broad cast message
@@ -65,6 +64,7 @@ namespace SignalRChat
 
         }
 
+        // Отключение пользователя
         public override System.Threading.Tasks.Task OnDisconnected()
         {
             var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
@@ -80,10 +80,8 @@ namespace SignalRChat
             return base.OnDisconnected();
         }
 
-     
-        #endregion
 
-        #region private Messages
+        //private Messages
 
         private void AddMessageinCache(string userName, string message)
         {
@@ -93,7 +91,6 @@ namespace SignalRChat
                 CurrentMessage.RemoveAt(0);
         }
 
-        #endregion
     }
 
 }
